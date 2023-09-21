@@ -1,6 +1,10 @@
 
 body {
-    background-color: aqua;
+    /* background-color: black; */
+    background-image: url('/img/sevensamurai.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
   }
   .flex-container {
@@ -9,17 +13,16 @@ body {
     
   }
   .aside {
-    background-color: lightgreen;
+    background: rgba(0,0,0,0.3);
     width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     width: 25%;
+    color: white;
   }
-  /* .game-title {
-    text-align: left;
-  } */
+
 
   .instructions-wraper {
     width: 14rem;
@@ -37,8 +40,11 @@ body {
     align-items: center;
   }
   .play {
-    width:80px;
+    width:100px;
     height: 40px;
+    border: 2px solid black;
+    border-radius: 25px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 1);
   }
 
   .main {
@@ -51,6 +57,7 @@ body {
     margin-left: auto;
     border: 5px solid black;
     position: relative;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 1);
   }
   .samurai-one {
     background-image: url('/img/Walk.png');
@@ -82,19 +89,19 @@ body {
     color: white;
     width: 70px;
     border-radius: 25%;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     border: 1px solid white;
 }
 .textbox-two {
     position: relative;
     left: 18rem;
-    top: 17rem;
+    top: 16.7rem;
     background-color: black;
     color: white;
-    width: 70px;
+    width: 80px;
     border-radius: 25%;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     border: 1px solid white;
 }
@@ -102,7 +109,7 @@ body {
  
   
 .footer {
-    background-color: lightgreen;
+    background: rgba(0,0,0,0.3);
     height: 8rem;
     display: flex;
     justify-content: center;
@@ -113,10 +120,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgoldenrodyellow;
+    background-color: white;
     width: 7rem;
     height: 5rem;
-    border: 3px solid orange;
-    border-radius: 2rem;
+    border: 3px solid black;
+    border-radius: 30px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 1);
 }
 
