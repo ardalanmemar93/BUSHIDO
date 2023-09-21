@@ -1,0 +1,87 @@
+
+body {
+    background-color: aqua;
+    height: 100vh;
+  }
+  .flex-container {
+    display: flex;
+    width: 100%;
+    
+  }
+  .aside {
+    background-color: lightgreen;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25%;
+  }
+  .game-title {
+    text-align: left;
+    padding: 1rem;
+    padding-bottom: 3rem;
+  }
+  .instructions { 
+    text-align: center;
+  }
+  .button-wraper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .play {
+    width:80px;
+    height: 40px;
+  }
+
+  .main {
+    background-image: url("/img/origbig.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    width: 75%;
+    margin-left: auto;
+    border: 5px solid black;
+  }
+  .samurai-one {
+    background-image: url('/img/Walk.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 100px;
+    position: relative;
+    left: 20rem;
+    top: 20rem;
+  }
+
+  .samurai-two {
+    background-image: url('/img/cWalk.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 100px;
+    position: relative;
+    left: 30rem;
+    top: 13.8rem
+  }
+  
+.footer {
+    background-color: lightgreen;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgoldenrodyellow;
+    width: 7rem;
+    height: 5rem;
+    border: 3px solid orange;
+    border-radius: 2rem;
+}
+
