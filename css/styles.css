@@ -17,11 +17,9 @@ body {
     align-items: center;
     width: 25%;
   }
-  .game-title {
+  /* .game-title {
     text-align: left;
-    padding: 1rem;
-    padding-bottom: 3rem;
-  }
+  } */
 
   .instructions-wraper {
     width: 14rem;
@@ -52,6 +50,7 @@ body {
     width: 75%;
     margin-left: auto;
     border: 5px solid black;
+    position: relative;
   }
   .samurai-one {
     background-image: url('/img/Walk.png');
@@ -59,7 +58,7 @@ body {
     background-repeat: no-repeat;
     width: 50px;
     height: 100px;
-    position: relative;
+    position: absolute;
     left: 20rem;
     top: 20rem;
   }
@@ -72,8 +71,35 @@ body {
     height: 100px;
     position: relative;
     left: 30rem;
-    top: 13.8rem
+    top: 14.3rem
   }
+
+.textbox-one {
+    position: relative;
+    left: 28rem;
+    top: 18.5rem;
+    background-color: black;
+    color: white;
+    width: 70px;
+    border-radius: 25%;
+    font-size: 10px;
+    text-align: center;
+    border: 1px solid white;
+}
+.textbox-two {
+    position: relative;
+    left: 18rem;
+    top: 17rem;
+    background-color: black;
+    color: white;
+    width: 70px;
+    border-radius: 25%;
+    font-size: 10px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+ 
   
 .footer {
     background-color: lightgreen;
