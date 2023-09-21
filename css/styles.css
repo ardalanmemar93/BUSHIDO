@@ -14,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     width: 25%;
   }
   .game-title {
@@ -21,6 +22,14 @@ body {
     padding: 1rem;
     padding-bottom: 3rem;
   }
+
+  .instructions-wraper {
+    width: 14rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .instructions { 
     text-align: center;
   }
