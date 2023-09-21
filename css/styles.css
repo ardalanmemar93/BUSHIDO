@@ -1,6 +1,5 @@
 
 body {
-    /* background-color: black; */
     background-image: url('/img/sevensamurai.webp');
     background-position: center;
     background-repeat: no-repeat;
@@ -10,6 +9,7 @@ body {
   .flex-container {
     display: flex;
     width: 100%;
+    margin-top: 3rem;
     
   }
   .aside {
