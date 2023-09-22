@@ -1,5 +1,4 @@
 
-
 // Define an array of directional arrow symbols
 
 
@@ -32,9 +31,7 @@
 
 // Event listeners
 
-
-
-// a traack playing while the user is on the page would be nice.
+// a track playing while the user is on the page would be nice.
 // before the animation id like the text boxes above the characters pop up.
 // i paln to add animation using sprites after the player has finished to showcase a winner. either the player or the computer. 
 // the quote section in the aside id like to add more quotes that the player can scroll through.

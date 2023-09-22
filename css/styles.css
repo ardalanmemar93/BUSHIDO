@@ -68,8 +68,8 @@ body {
     background-image: url('/img/Walk.png');
     background-position: center;
     background-repeat: no-repeat;
-    width: 50px;
-    height: 100px;
+    width: 2rem;
+    height: 8rem;
     position: absolute;
     left: 20rem;
     top: 20rem;
@@ -79,8 +79,8 @@ body {
     background-image: url('/img/cWalk.png');
     background-position: center;
     background-repeat: no-repeat;
-    width: 50px;
-    height: 100px;
+    width: 2rem;
+    height: 8rem;
     position: relative;
     left: 30rem;
     top: 14.3rem
@@ -115,7 +115,7 @@ body {
   
 .footer {
     background: rgba(0,0,0,0.4);
-    height: 8rem;
+    height: 15rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -141,4 +141,5 @@ body {
     width: 20rem;
     display: flex;
     align-items: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 4)
 }
