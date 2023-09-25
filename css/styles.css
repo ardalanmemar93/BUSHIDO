@@ -1,145 +1,178 @@
-
 body {
-    background-image: url('/img/sevensamurai.webp');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-  }
-  .flex-container {
-    display: flex;
-    width: 100%;
-    margin-top: 3rem;
-    
-  }
-  .aside {
-    background: rgba(0,0,0,0.4);
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 25%;
-    color: white;
-  }
-  .game-title {
-    font-weight: bold;
-  }
+  background-image: url("/img/sevensamurai.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.flex-container {
+  display: flex;
+  width: 100%;
+  margin-top: 3rem;
+}
+.aside {
+  background: rgba(0, 0, 0, 0.4);
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+  color: white;
+}
+.game-title {
+  font-weight: bold;
+}
 
+.quotes-wraper {
+  width: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .quotes-wraper {
-    width: 14rem;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-  }
+.quotes {
+  text-align: center;
+  /* font-family: */
+}
 
-  .quotes { 
-    text-align: center;
-    /* font-family: */
-  }
+.button-wraper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play {
+  width: 100px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 25px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 4);
+}
 
-  .button-wraper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .play {
-    width:100px;
-    height: 40px;
-    border: 2px solid black;
-    border-radius: 25px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 4);
-  }
+.main {
+  background-image: url("/img/origbig.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30rem;
+  width: 75%;
+  margin-left: auto;
+  border: 5px solid black;
+  position: relative;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 4);
+}
+.samurai-one {
+  background-image: url("/img/Walk.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: 8rem;
+  position: absolute;
+  left: 20rem;
+  top: 20rem;
+}
 
-  .main {
-    background-image: url("/img/origbig.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 30rem;
-    width: 75%;
-    margin-left: auto;
-    border: 5px solid black;
-    position: relative;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 4);
-  }
-  .samurai-one {
-    background-image: url('/img/Walk.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 3rem;
-    height: 8rem;
-    position: absolute;
-    left: 20rem;
-    top: 20rem;
-  }
-
-  .samurai-two {
-    background-image: url('/img/cWalk.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 3rem;
-    height: 8rem;
-    position: relative;
-    left: 30rem;
-    top: 14.3rem
-  }
+.samurai-two {
+  background-image: url("/img/cWalk.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: 8rem;
+  position: relative;
+  left: 30rem;
+  top: 14.3rem;
+}
 
 .textbox-one {
-    position: relative;
-    left: 28rem;
-    top: 18.5rem;
-    background-color: black;
-    color: white;
-    width: 70px;
-    border-radius: 25%;
-    font-size: 12px;
-    text-align: center;
-    border: 1px solid white;
+  position: relative;
+  left: 28rem;
+  top: 18.5rem;
+  background-color: black;
+  color: white;
+  width: 70px;
+  border-radius: 25%;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid white;
 }
 .textbox-two {
-    position: relative;
-    left: 18rem;
-    top: 16.7rem;
-    background-color: black;
-    color: white;
-    width: 80px;
-    border-radius: 25%;
-    font-size: 12px;
-    text-align: center;
-    border: 1px solid white;
+  position: relative;
+  left: 18rem;
+  top: 16.7rem;
+  background-color: black;
+  color: white;
+  width: 80px;
+  border-radius: 25%;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid white;
 }
 
- 
-  
 .footer {
-    background: rgba(0,0,0,0.4);
-    height: 15rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  height: 15rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .tile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    width: 10rem;
-    height: 3rem;
-    border: 3px solid black;
-    border-radius: 30px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 10rem;
+  height: 3rem;
+  border: 3px solid black;
+  border-radius: 30px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 4);
 }
 .instructions {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 20px;
-    height: 3.3rem;
-    text-align: center;
-    width: 20rem;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 4)
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  height: 3.3rem;
+  text-align: center;
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 4);
 }
+
+/* ----------------------------------------------------------------- */
+
+.play:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  position: relative;
+  border-style: solid;
+  margin: 0 5px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.arrow-up {
+  border-width: 10px 10px 0 10px;
+  border-color: red transparent transparent transparent;
+}
+
+.arrow-down {
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent yellow transparent;
+}
+
+.arrow-left {
+  border-width: 10px 10px 10px 0;
+  border-color: transparent green transparent transparent;
+}
+
+.arrow-right {
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent blue;
+}
+
