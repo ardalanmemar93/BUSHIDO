@@ -8,6 +8,7 @@ let userClickedPattern = [];
 // Game state variables
 let started = false;
 let level = 0;
+let isPlayingSequence = false; // Added variable to track sequence playback
 
 // Start game when a key is pressed
 document.addEventListener("keypress", function (event) {
@@ -22,13 +23,15 @@ document.addEventListener("keypress", function (event) {
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach(function (button) {
   button.addEventListener("click", function () {
-    let userChosenColour = button.id;
-    userClickedPattern.push(userChosenColour);
+    if (!isPlayingSequence) { // Only check user input when not playing sequence
+      let userChosenColour = button.id;
+      userClickedPattern.push(userChosenColour);
 
-    playSound(userChosenColour);
-    animatePress(userChosenColour);
+      playSound(userChosenColour);
+      animatePress(userChosenColour);
 
-    checkAnswer(userClickedPattern.length - 1);
+      checkAnswer(userClickedPattern.length - 1);
+    }
   });
 });
 
@@ -36,9 +39,12 @@ buttons.forEach(function (button) {
 function checkAnswer(currentLevel) {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
     if (userClickedPattern.length === gamePattern.length) {
-      setTimeout(function () {
-        nextSequence();
-      }, 1000);
+      if (userClickedPattern.join("") === gamePattern.join("")) {
+        // User's pattern matches the current level's game pattern
+        setTimeout(function () {
+          nextSequence();
+        }, 1000);
+      }
     }
   } else {
     playSound("wrong");
@@ -54,12 +60,16 @@ function checkAnswer(currentLevel) {
   }
 }
 
+
 // Generate the next sequence in the game
 function nextSequence() {
   userClickedPattern = [];
   level++;
   document.querySelector("#level-title").textContent = "Level " + level;
-  let sequenceLength = 2 + level * 2; // Start with 2 and increment by 2 for each level
+  let sequenceLength =  1 + level; // Start with 4 and add the level to increase sequence length
+  isPlayingSequence = true; // Set to true during sequence playback
+
+  // Generate a random pattern for the current level
   for (let i = 0; i < sequenceLength; i++) {
     setTimeout(function () {
       let randomNumber = Math.floor(Math.random() * 4);
@@ -71,8 +81,13 @@ function nextSequence() {
       setTimeout(function () {
         document.getElementById(randomChosenColour).style.opacity = "1";
         playSound(randomChosenColour);
+
+        if (i === sequenceLength - 1) {
+          // When the last color in the sequence is displayed, set isPlayingSequence to false
+          isPlayingSequence = false;
+        }
       }, 100);
-    }, i * 1000); // Adjust the delay as needed (e.g., 1000ms = 1 second)
+    }, i * 1000); // Adjust the delay as needed
   }
 }
 

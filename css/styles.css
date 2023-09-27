@@ -59,3 +59,20 @@ h1 {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+.samurai-wraper {
+  display: flex;
+  justify-content: space-around;
+}
+.samuraione {
+  margin-top: 3rem;
+  width: 100px;
+  height: 150px;
+  background-image: url('/img/Walk.png');
+}
+.samuraitwo {
+  margin-top: 3rem;
+  width: 100px;
+  height: 150px;
+  background-image: url('/img/cWalk.png');
+}
