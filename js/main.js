@@ -1,152 +1,98 @@
+// Array to store button colors
+const buttonColours = ["red", "blue", "green", "yellow"];
 
+// Arrays to store game and user patterns
+let gamePattern = [];
+let userClickedPattern = [];
 
-  const playButton = document.querySelector(".play");
-  const tile = document.querySelector(".tile");
-  const arrowContainer = document.querySelector(".arrows");
+// Game state variables
+let started = false;
+let level = 0;
 
-  const arrowSymbols = {
-    "↑": "ArrowUp",
-    "↓": "ArrowDown",
-    "←": "ArrowLeft",
-    "→": "ArrowRight",
-  };
-
-  const arrowKeyCodes = {
-    ArrowUp: "↑",
-    ArrowDown: "↓",
-    ArrowLeft: "←",
-    ArrowRight: "→",
-  };
-
-  const arrowColors = {
-    "↑": "red",
-    "↓": "yellow",
-    "←": "green",
-    "→": "blue",
-  };
-
-  let userInput = [];
-  let gamePattern = [];
-  let level = 0;
-  let gameStarted = false;
-  let isUserTurn = false;
-
-  function createArrowElement(symbol) {
-    const arrowElement = document.createElement("div");
-    arrowElement.classList.add("arrow", `arrow-${arrowColors[symbol]}`);
-    arrowElement.textContent = symbol;
-    return arrowElement;
+// Start game when a key is pressed
+document.addEventListener("keypress", function (event) {
+  if (!started) {
+    document.querySelector("#level-title").textContent = "Level " + level;
+    nextSequence();
+    started = true;
   }
+});
 
-  function addArrowToTile(symbol) {
-    const arrowElement = createArrowElement(symbol);
-    arrowContainer.appendChild(arrowElement);
-    // Remove the arrow after a delay
-    setTimeout(() => {
-      arrowElement.remove();
-    }, 1000); // Adjust the delay as needed
-  }
+// Handle button clicks
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    let userChosenColour = button.id;
+    userClickedPattern.push(userChosenColour);
 
-  function removeArrowsFromTile() {
-    const arrowElements = document.querySelectorAll(".arrow");
-    arrowElements.forEach((arrow) => arrow.remove());
-  }
+    playSound(userChosenColour);
+    animatePress(userChosenColour);
 
-  function checkUserInput() {
-    if ( 
-      userInput.length === gamePattern.length &&
-      userInput.join("") === gamePattern.join("")
-    ) {
-      if (level === 3) {
-        // User has completed the game (change 3 to the number of levels you want)
-        // Show a winner animation or message
-        alert("Congratulations! You have won the game.");
-        resetGame();
-      } else {
-        setTimeout(() => {
-          nextLevel();
-        }, 1000); // Adjust the delay as needed
-      }
-    } else if (
-      userInput.length > 0 &&
-      userInput[userInput.length - 1] !== gamePattern[userInput.length - 1]
-    ) {
-      // User made a mistake, game over
-      gameOver();
-    }
-  }
-
-  function nextLevel() {
-    userInput = [];
-    level++;
-    let patternLength = 4 + (level - 1) * 2; // 4, 6, 8, etc.
-    gamePattern = generateRandomPattern(patternLength);
-    isUserTurn = true;
-
-    // Remove any previous arrows from the tile
-    removeArrowsFromTile();
-
-    // Add the new pattern of arrows to the tile with a delay
-    gamePattern.forEach((symbol, index) => {
-      setTimeout(() => {
-        addArrowToTile(symbol);
-        // Check if it's the last arrow in the pattern to enable user input
-        if (index === gamePattern.length - 1) {
-          isUserTurn = true;
-        }
-      }, 1000 * (index + 1)); // Adjust the delay as needed
-    });
-  }
-
-  function generateRandomPattern(length) {
-    const pattern = [];
-    const symbols = Object.keys(arrowSymbols);
-    for (let i = 0; i < length; i++) {
-      const randomDirection = symbols[Math.floor(Math.random() * symbols.length)];
-      pattern.push(arrowSymbols[randomDirection]);
-    }
-    return pattern;
-  }
-
-  function gameOver() {
-    alert("Game Over. Try again!");
-    resetGame();
-  }
-
-  function resetGame() {
-    level = 0;
-    gamePattern = [];
-    userInput = [];
-    isUserTurn = false;
-
-    // Remove any arrows from the tile
-    removeArrowsFromTile();
-
-    playButton.disabled = false;
-  }
-
-  document.addEventListener("keydown", function (event) {
-    if (!gameStarted && event.key === "Enter") {
-      startGame();
-    } else if (isUserTurn && arrowKeyCodes[event.key]) {
-      const symbol = arrowKeyCodes[event.key];
-      userInput.push(symbol);
-      checkUserInput();
-    }
+    checkAnswer(userClickedPattern.length - 1);
   });
+});
 
-  function startGame() {
-    resetGame();
-    nextLevel();
-    gameStarted = true;
+// Check user's answer
+function checkAnswer(currentLevel) {
+  if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
+    if (userClickedPattern.length === gamePattern.length) {
+      setTimeout(function () {
+        nextSequence();
+      }, 1000);
+    }
+  } else {
+    playSound("wrong");
+    document.querySelector("body").classList.add("game-over");
+    document.querySelector("#level-title").textContent =
+      "Game Over, Press Any Key to Restart";
+
+    setTimeout(function () {
+      document.querySelector("body").classList.remove("game-over");
+    }, 200);
+
+    startOver();
   }
+}
 
-  // Add event listener for the "play" button click
-  playButton.addEventListener("click", startGame);
+// Generate the next sequence in the game
+function nextSequence() {
+  userClickedPattern = [];
+  level++;
+  document.querySelector("#level-title").textContent = "Level " + level;
+  let sequenceLength = 2 + level * 2; // Start with 2 and increment by 2 for each level
+  for (let i = 0; i < sequenceLength; i++) {
+    setTimeout(function () {
+      let randomNumber = Math.floor(Math.random() * 4);
+      let randomChosenColour = buttonColours[randomNumber];
+      gamePattern.push(randomChosenColour);
 
+      // Display and animate the next color in the sequence
+      document.getElementById(randomChosenColour).style.opacity = "0";
+      setTimeout(function () {
+        document.getElementById(randomChosenColour).style.opacity = "1";
+        playSound(randomChosenColour);
+      }, 100);
+    }, i * 1000); // Adjust the delay as needed (e.g., 1000ms = 1 second)
+  }
+}
 
+// Add a pressed animation to the clicked button
+function animatePress(currentColor) {
+  document.getElementById(currentColor).classList.add("pressed");
+  setTimeout(function () {
+    document.getElementById(currentColor).classList.remove("pressed");
+  }, 100);
+}
 
+// Play a sound for a button color
+function playSound(name) {
+  let audio = new Audio("music/" + name + ".wav");
+  audio.play();
+}
 
-
-
-
+// Reset the game
+function startOver() {
+  level = 0;
+  gamePattern = [];
+  started = false;
+}
