@@ -61,31 +61,28 @@ function checkAnswer(currentLevel) {
 
 // Generate the next sequence in the game
 function nextSequence() {
-  userClickedPattern = [];
+  userClickedPattern = []; // Clear user's input pattern for the current round
   level++;
   document.querySelector("#level-title").textContent = "Level " + level;
-  let sequenceLength = 1 + level; // Start with 1 and add the level to increase sequence length
-  isPlayingSequence = true; // Set to true during sequence playback
+  let sequenceLength = 1 + level;
+  isPlayingSequence = true;
 
-  // Generate a random pattern for the current level
   for (let i = 0; i < sequenceLength; i++) {
     setTimeout(function () {
       let randomNumber = Math.floor(Math.random() * 4);
       let randomChosenColour = buttonColours[randomNumber];
       gamePattern.push(randomChosenColour);
 
-      // Display and animate the next color in the sequence
       document.getElementById(randomChosenColour).style.opacity = "0";
       setTimeout(function () {
         document.getElementById(randomChosenColour).style.opacity = "1";
         playSound(randomChosenColour);
 
         if (i === sequenceLength - 1) {
-          // When the last color in the sequence is displayed, set isPlayingSequence to false
           isPlayingSequence = false;
         }
       }, 100);
-    }, i * 1000); // Adjust the delay as needed
+    }, i * 1000);
   }
 }
 
