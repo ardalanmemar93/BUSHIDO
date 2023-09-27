@@ -1,5 +1,5 @@
 body {
-  background-image: url("img/sevensamurai.webp");
+  background-image: url("/img/sevensamurai.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,7 +12,7 @@ body {
 }
 
 .main {
-  background-image: url("img/origbig.png");
+  background-image: url("/img/origbig.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -68,11 +68,11 @@ h1 {
   margin-top: 3rem;
   width: 100px;
   height: 150px;
-  background-image: url('img/Walk.png');
+  background-image: url('/img/Walk.png');
 }
 .samuraitwo {
   margin-top: 3rem;
   width: 100px;
   height: 150px;
-  background-image: url('img/cWalk.png');
+  background-image: url('/img/cWalk.png');
 }
