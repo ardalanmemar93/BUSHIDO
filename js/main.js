@@ -61,7 +61,7 @@ function checkAnswer(currentLevel) {
 
 // Generate the next sequence in the game
 function nextSequence() {
-  userClickedPattern = []; // Clear user's input pattern for the current round
+  // let userClickedPattern = []; // Clear user's input pattern for the current round
   level++;
   document.querySelector("#level-title").textContent = "Level " + level;
   let sequenceLength = 1 + level;
