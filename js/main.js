@@ -8,7 +8,7 @@ let userClickedPattern = [];
 // Game state variables
 let started = false;
 let level = 0;
-let isPlayingSequence = false; // Added variable to track sequence playback
+let isPlayingSequence = false;
 
 // Start game when a key is pressed
 document.addEventListener("keypress", function (event) {
@@ -23,13 +23,12 @@ document.addEventListener("keypress", function (event) {
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach(function (button) {
   button.addEventListener("click", function () {
-    if (!isPlayingSequence) { // Only check user input when not playing sequence
+    if (!isPlayingSequence) {
+      // Only check user input when not playing sequence
       let userChosenColour = button.id;
       userClickedPattern.push(userChosenColour);
-
       playSound(userChosenColour);
       animatePress(userChosenColour);
-
       checkAnswer(userClickedPattern.length - 1);
     }
   });
@@ -60,13 +59,12 @@ function checkAnswer(currentLevel) {
   }
 }
 
-
 // Generate the next sequence in the game
 function nextSequence() {
   userClickedPattern = [];
   level++;
   document.querySelector("#level-title").textContent = "Level " + level;
-  let sequenceLength =  1 + level; // Start with 4 and add the level to increase sequence length
+  let sequenceLength = 1 + level; // Start with 1 and add the level to increase sequence length
   isPlayingSequence = true; // Set to true during sequence playback
 
   // Generate a random pattern for the current level
