@@ -40,19 +40,19 @@ h1 {
 }
 
 .red {
-  background-color: red;
+  background-color: rgb(224, 138, 131);
 }
 
 .green {
-  background-color: green;
+  background-color: rgb(97, 180, 106);
 }
 
 .blue {
-  background-color: blue;
+  background-color: rgb(23, 65, 117);
 }
 
 .yellow {
-  background-color: yellow;
+  background-color:#FCFF94;
 }
 
 .pressed {
