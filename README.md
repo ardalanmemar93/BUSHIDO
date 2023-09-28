@@ -16,6 +16,8 @@ Re-creation of the classic Simon game, using HTML, Javascript, and CSS.
 ![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![VSCode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
 
+#### Maintained
+![maintaned](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 
 ## Simon
 
