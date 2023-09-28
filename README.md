@@ -59,7 +59,7 @@ In this project, I've used HTML to build the basic structure of the game, CSS to
 
 - User Interface: Creating an interactive and visually appealing user interface (UI) with clickable buttons, animations, and responsive design was a significant task.
 
-- Audio Integration: Integrating audio files for button sounds and game over/winning effects involved working with the HTML5 Audio API and managing sound playback.
+- Audio Integration: Integrating audio files for button sounds and game over/winning effects.
 
 - Level Management: Tracking and managing game levels, including determining when the player has completed all levels and displaying a "Congratulations" message, required precise coding.
 
