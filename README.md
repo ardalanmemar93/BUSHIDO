@@ -5,7 +5,7 @@
 
 Re-creation of the classic Simon game, using HTML, Javascript, and CSS.
 
-A live build can be found [here](https://code.aaronishibashi.com/simon/).
+A live build can be found [here](https://ardalanmemar93.github.io/BUSHIDO/).
 
 ## Tools
 
