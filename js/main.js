@@ -1,6 +1,7 @@
 
 // Array to store button colors
 const buttonColours = ["red", "blue", "green", "yellow"];
+const buttons = document.querySelectorAll(".btn");
 const totalLevels = 5;
 
 // Access the volume control and play/pause buttons
@@ -66,7 +67,7 @@ document.addEventListener("keypress", (event) => {
 });
 
 // Handle button clicks
-const buttons = document.querySelectorAll(".btn");
+
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (!isPlayingSequence) {
