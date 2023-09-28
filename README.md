@@ -113,6 +113,6 @@ const checkAnswer = (currentLevel) => {
 - [ ] Mobile support
 - [ ] Difficulty mode (speed inclines quicker)
 - [ ] Animate the samurai(have them battle one another)
-- [ ] Music on the standby screen & result screen
+- [x] background music with play/pause and a volume button
 - [ ] Change up the sounds to suit the theme better
 - [ ] Add buttons for the samurai animations 

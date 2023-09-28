@@ -2,8 +2,6 @@
 // Array to store button colors
 const buttonColours = ["red", "blue", "green", "yellow"];
 
-
-
 // Define the initial volume level and playing state
 let currentVolume = 0.2; 
 let isPlaying = true;   
