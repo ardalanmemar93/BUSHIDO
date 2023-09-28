@@ -65,14 +65,39 @@ h1 {
   justify-content: space-around;
 }
 .samuraione {
-  margin-top: 3rem;
+  margin-top: 5rem;
   width: 100px;
   height: 150px;
   background-image: url('../img/Walk.png');
 }
 .samuraitwo {
-  margin-top: 3rem;
+  margin-top: 5rem;
   width: 100px;
   height: 150px;
   background-image: url('../img/cWalk.png');
 } 
+
+#volume-control {
+  background-color: rgb(132, 132, 227);
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px grey;
+}
+#play-pause {
+  background-color: rgb(132, 132, 227);
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 10px 5px 5px grey;
+}
+
+#volume-control:hover {
+  background-color: lightblue; 
+  color: white; 
+  cursor: pointer; 
+}
+
+#play-pause:hover {
+  background-color: lightblue; 
+  color: white; 
+  cursor: pointer; 
+}

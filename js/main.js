@@ -2,6 +2,54 @@
 // Array to store button colors
 const buttonColours = ["red", "blue", "green", "yellow"];
 
+
+
+// Define the initial volume level and playing state
+let currentVolume = 0.2; 
+let isPlaying = true;   
+
+// Access the volume control and play/pause buttons
+const volumeButton = document.getElementById("volume-control");
+const playPauseButton = document.getElementById("play-pause");
+
+// Access the audio element for the background music
+const backgroundMusic = new Audio("music/backgroundmusic.mp3");
+
+// Set the initial volume
+backgroundMusic.volume = currentVolume;
+
+// Add a click event listener to the volume control button
+volumeButton.addEventListener("click", () => {
+  // Toggle between different volume levels (you can customize these levels)
+  if (currentVolume === 0.2) {
+    currentVolume = 0.5; 
+  } else if (currentVolume === 0.5) {
+    currentVolume = 1.0; 
+  } else {
+    currentVolume = 0.2; 
+  }
+
+  // Set the new volume for the background music
+  backgroundMusic.volume = currentVolume;
+  volumeButton.textContent = `Volume: ${Math.round(currentVolume * 100)}%`;
+});
+
+// Add a click event listener to the play/pause button
+playPauseButton.addEventListener("click", () => {
+  if (isPlaying) {
+    backgroundMusic.pause();
+    playPauseButton.textContent = "Play";
+  } else {
+    backgroundMusic.play();
+    playPauseButton.textContent = "Pause";
+  }
+  
+  // Toggle the playing state
+  isPlaying = !isPlaying;
+});
+
+
+
 // Arrays to store game and user patterns
 let gamePattern = [];
 let userClickedPattern = [];
