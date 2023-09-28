@@ -1,3 +1,4 @@
+
 // Array to store button colors
 const buttonColours = ["red", "blue", "green", "yellow"];
 
@@ -9,6 +10,7 @@ let userClickedPattern = [];
 let started = false;
 let level = 0;
 let isPlayingSequence = false;
+const totalLevels = 5; 
 
 // Start game when a key is pressed
 document.addEventListener("keypress", function (event) {
@@ -39,10 +41,18 @@ function checkAnswer(currentLevel) {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
     if (userClickedPattern.length === gamePattern.length) {
       if (userClickedPattern.join("") === gamePattern.join("")) {
-        // User's pattern matches the current level's game pattern
-        setTimeout(function () {
-          nextSequence();
-        }, 1000);
+        if (level === totalLevels) {
+          // Display "Congratulations" message when the user completes all levels
+          document.querySelector("#level-title").textContent = "Congratulations! You Won! Press Any Key to restart!";
+          setTimeout(function () {
+            startOver(); // Reset the game after a delay
+          }, 2000);
+        } else {
+          // User's pattern matches the current level's game pattern
+          setTimeout(function () {
+            nextSequence();
+          }, 1000);
+        }
       }
     }
   } else {
@@ -61,7 +71,6 @@ function checkAnswer(currentLevel) {
 
 // Generate the next sequence in the game
 function nextSequence() {
-  // let userClickedPattern = []; // Clear user's input pattern for the current round
   level++;
   document.querySelector("#level-title").textContent = "Level " + level;
   let sequenceLength = 1 + level;
@@ -95,17 +104,16 @@ function animatePress(currentColor) {
 }
 
 // Play a sound for a button color
-function playSound(name) {
+const playSound = (name) => {
   let audio = new Audio("music/" + name + ".wav");
   audio.play();
-}
+};
 
 // Reset the game
 function startOver() {
   level = 0;
   gamePattern = [];
   started = false;
-  isPlayingSequence = false; 
-  userClickedPattern = []; 
+  isPlayingSequence = false;
+  userClickedPattern = [];
 }
-
