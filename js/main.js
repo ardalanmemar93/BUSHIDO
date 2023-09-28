@@ -19,6 +19,7 @@ let started = false;
 let level = 0;
 let isPlayingSequence = false;
 const totalLevels = 5;
+
 // Define the initial volume level and playing state
 let currentVolume = 0.2; 
 let isPlaying = true;   
@@ -28,7 +29,6 @@ backgroundMusic.volume = currentVolume;
 
 // Add a click event listener to the volume control button
 volumeButton.addEventListener("click", () => {
-  // Toggle between different volume levels (you can customize these levels)
   if (currentVolume === 0.2) {
     currentVolume = 0.5; 
   } else if (currentVolume === 0.5) {
