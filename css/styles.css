@@ -52,7 +52,7 @@ h1 {
 }
 
 .yellow {
-  background-color:#FCFF94;
+  background-color: #fcff94;
 }
 
 .pressed {
@@ -68,14 +68,14 @@ h1 {
   margin-top: 5rem;
   width: 100px;
   height: 150px;
-  background-image: url('../img/Walk.png');
+  background-image: url("../img/Walk.png");
 }
 .samuraitwo {
   margin-top: 5rem;
   width: 100px;
   height: 150px;
-  background-image: url('../img/cWalk.png');
-} 
+  background-image: url("../img/cWalk.png");
+}
 
 #volume-control {
   background-color: rgb(132, 132, 227);
@@ -91,13 +91,13 @@ h1 {
 }
 
 #volume-control:hover {
-  background-color: lightblue; 
-  color: white; 
-  cursor: pointer; 
+  background-color: lightblue;
+  color: white;
+  cursor: pointer;
 }
 
 #play-pause:hover {
-  background-color: lightblue; 
-  color: white; 
-  cursor: pointer; 
+  background-color: lightblue;
+  color: white;
+  cursor: pointer;
 }
