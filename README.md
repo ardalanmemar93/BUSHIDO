@@ -5,7 +5,7 @@
 
 Re-creation of the classic Simon game, using HTML, Javascript, and CSS.
 
-A live build can be found [here](https://ardalanmemar93.github.io/BUSHIDO/).
+# A live build can be found [here](https://ardalanmemar93.github.io/BUSHIDO/).
 
 ## Tools
 
@@ -40,6 +40,15 @@ The game continues until the player makes a mistake by pressing the wrong button
 
 ## Features
 - Simple and usable front-end design
+- Interactive Gameplay
+- Random Sequences
+- Sound Effects
+- Visual Feedback
+- Error Handling
+- CSS FlexBox
+- Background Images
+- Congratulations Message
+- Restart Functionality
 
 ## Technologies used
 
@@ -103,4 +112,5 @@ function checkAnswer(currentLevel) {
 - [ ] Difficulty mode (speed inclines quicker)
 - [ ] Animate the samurai(have them battle one another)
 - [ ] Music on the standby screen & result screen
-- [ ] Add more buttons
+- [ ] Change up the sounds to suit the theme better
+- [ ] Add buttons for the samurai animations 
