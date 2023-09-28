@@ -28,9 +28,9 @@ The main goal of Simon is to test and improve your memory. The game will play a 
 Simon starts with two colors in the sequence.
 It plays that color's sound and flashes the corresponding button.
 The player must then press the button that matches the color they just saw and heard.
-Simon then adds one more color to the sequence.
+Simon then adds one more color to a new sequence.
 The player must reproduce the sequence, which now includes the new color.
-This process continues, with Simon adding one more color to the sequence each time.
+This process continues, with Simon adding one more color to a new sequence each time.
 
 - Winning and Scoring:
 The game continues until the player makes a mistake by pressing the wrong button or forgetting the sequence. There are a total of 5 levels in this game. Once the player wins a message will pop up congratulating the player. 
