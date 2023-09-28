@@ -74,19 +74,20 @@ In this project, I've used HTML to build the basic structure of the game, CSS to
 ## Favorite Function
 - The most challenging function in this project is likely the "checkAnswer" function. This function is responsible for comparing the user's input (userClickedPattern) with the game's generated pattern (gamePattern) and determining whether the user's input matches the current level's game pattern. It involves multiple conditional statements and handling different scenarios, such as when the user completes a level or when they make a mistake. Additionally, it's responsible for displaying messages like "Game Over" and "Congratulations" based on the user's performance, adding complexity to the code.
 ```js
-function checkAnswer(currentLevel) {
+const checkAnswer = (currentLevel) => {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
     if (userClickedPattern.length === gamePattern.length) {
       if (userClickedPattern.join("") === gamePattern.join("")) {
         if (level === totalLevels) {
           // Display "Congratulations" message when the user completes all levels
-          document.querySelector("#level-title").textContent = "Congratulations! You Won! Press Any Key to restart!";
-          setTimeout(function () {
+          document.querySelector("#level-title").textContent =
+            "Congratulations! You Won! Press Any Key to restart!";
+          setTimeout(() => {
             startOver(); // Reset the game after a delay
           }, 2000);
         } else {
           // User's pattern matches the current level's game pattern
-          setTimeout(function () {
+          setTimeout(() => {
             nextSequence();
           }, 1000);
         }
@@ -98,13 +99,14 @@ function checkAnswer(currentLevel) {
     document.querySelector("#level-title").textContent =
       "Game Over, Press Any Key to Restart";
 
-    setTimeout(function () {
+    setTimeout(() => {
       document.querySelector("body").classList.remove("game-over");
     }, 200);
 
     startOver();
   }
-}
+};
+
 ```
 
 ## Future

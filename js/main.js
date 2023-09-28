@@ -10,10 +10,10 @@ let userClickedPattern = [];
 let started = false;
 let level = 0;
 let isPlayingSequence = false;
-const totalLevels = 5; 
+const totalLevels = 5;
 
 // Start game when a key is pressed
-document.addEventListener("keypress", function (event) {
+document.addEventListener("keypress", (event) => {
   if (!started) {
     document.querySelector("#level-title").textContent = "Level " + level;
     nextSequence();
@@ -23,8 +23,8 @@ document.addEventListener("keypress", function (event) {
 
 // Handle button clicks
 const buttons = document.querySelectorAll(".btn");
-buttons.forEach(function (button) {
-  button.addEventListener("click", function () {
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
     if (!isPlayingSequence) {
       // Only check user input when not playing sequence
       let userChosenColour = button.id;
@@ -37,19 +37,20 @@ buttons.forEach(function (button) {
 });
 
 // Check user's answer
-function checkAnswer(currentLevel) {
+const checkAnswer = (currentLevel) => {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
     if (userClickedPattern.length === gamePattern.length) {
       if (userClickedPattern.join("") === gamePattern.join("")) {
         if (level === totalLevels) {
           // Display "Congratulations" message when the user completes all levels
-          document.querySelector("#level-title").textContent = "Congratulations! You Won! Press Any Key to restart!";
-          setTimeout(function () {
+          document.querySelector("#level-title").textContent =
+            "Congratulations! You Won! Press Any Key to restart!";
+          setTimeout(() => {
             startOver(); // Reset the game after a delay
           }, 2000);
         } else {
           // User's pattern matches the current level's game pattern
-          setTimeout(function () {
+          setTimeout(() => {
             nextSequence();
           }, 1000);
         }
@@ -61,29 +62,29 @@ function checkAnswer(currentLevel) {
     document.querySelector("#level-title").textContent =
       "Game Over, Press Any Key to Restart";
 
-    setTimeout(function () {
+    setTimeout(() => {
       document.querySelector("body").classList.remove("game-over");
     }, 200);
 
     startOver();
   }
-}
+};
 
 // Generate the next sequence in the game
-function nextSequence() {
+const nextSequence = () => {
   level++;
   document.querySelector("#level-title").textContent = "Level " + level;
   let sequenceLength = 1 + level;
   isPlayingSequence = true;
 
   for (let i = 0; i < sequenceLength; i++) {
-    setTimeout(function () {
+    setTimeout(() => {
       let randomNumber = Math.floor(Math.random() * 4);
       let randomChosenColour = buttonColours[randomNumber];
       gamePattern.push(randomChosenColour);
 
       document.getElementById(randomChosenColour).style.opacity = "0";
-      setTimeout(function () {
+      setTimeout(() => {
         document.getElementById(randomChosenColour).style.opacity = "1";
         playSound(randomChosenColour);
 
@@ -93,15 +94,15 @@ function nextSequence() {
       }, 100);
     }, i * 1000);
   }
-}
+};
 
 // Add a pressed animation to the clicked button
-function animatePress(currentColor) {
+const animatePress = (currentColor) => {
   document.getElementById(currentColor).classList.add("pressed");
-  setTimeout(function () {
+  setTimeout(() => {
     document.getElementById(currentColor).classList.remove("pressed");
   }, 100);
-}
+};
 
 // Play a sound for a button color
 const playSound = (name) => {
@@ -110,10 +111,10 @@ const playSound = (name) => {
 };
 
 // Reset the game
-function startOver() {
+const startOver = () => {
   level = 0;
   gamePattern = [];
   started = false;
   isPlayingSequence = false;
   userClickedPattern = [];
-}
+};
