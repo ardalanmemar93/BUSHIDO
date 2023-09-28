@@ -1,7 +1,7 @@
 
 // Array to store button colors
 const buttonColours = ["red", "blue", "green", "yellow"];
-
+const totalLevels = 5;
 
 // Access the volume control and play/pause buttons
 const volumeButton = document.getElementById("volume-control");
@@ -18,7 +18,6 @@ let userClickedPattern = [];
 let started = false;
 let level = 0;
 let isPlayingSequence = false;
-const totalLevels = 5;
 
 // Define the initial volume level and playing state
 let currentVolume = 0.2; 
