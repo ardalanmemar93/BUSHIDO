@@ -118,3 +118,4 @@ const checkAnswer = (currentLevel) => {
 - [x] background music with play/pause and a volume button
 - [x] Change up the sounds to suit the theme better
 - [ ] Add buttons for the samurai animations 
+- [ ] Refactor code 

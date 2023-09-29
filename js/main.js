@@ -161,3 +161,11 @@ const startOver = () => {
   isPlayingSequence = false;
   userClickedPattern = [];
 };
+
+
+
+
+
+
+
+
